@@ -1,4 +1,4 @@
-# A quest in the clouds
+# A data quest
 
 ### Q. What is this quest?
 #####  It is a fun way to assess your data skills. It is also a good representative sample of the work we do at Rearc.
