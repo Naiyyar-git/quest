@@ -44,6 +44,7 @@ Basic data management concepts. Some programming language. Some AWS.
     | PRS30006012 | 2000 | Q02    | 8     |
     | PRS30006012 | 2001 | Q01    | 2     |
     | PRS30006012 | 2001 | Q02    | 3     |
+
     the report would generate the following table:
 
     | series_id   | year | value |
