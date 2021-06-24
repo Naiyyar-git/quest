@@ -4,9 +4,16 @@
 It is a fun way to assess your data skills. It is also a good representative sample of the work we do at Rearc.
 
 ### Q. So what skills should I have?
-Basic data management concepts. Some programming language. Some AWS.
+* data management / data engineering concepts.
+* programming language (python, java, scala, etc).
+* AWS
 
 ### Q. What do I have to do?
+This quest consists of 4 different parts. Putting all 4 parts together we will have a Data Pipeline architecture.
+- Part 1 and Part 2 will showcase your skills with data management, AWS concepts, and your overall data engineering skillset.
+  The goal is to source data from different places and store it in-house.
+- Part 3 will showcase your data analytics skills. The goal is to find some interesting insights with data.
+- Lastly, Part 4 will put all the pieces together. The goal here is to showcase your experience with automation and AWS services.
 
 #### Part 1: AWS S3 & Sourcing Datasets
 1) Republish [this open dataset](https://download.bls.gov/pub/time.series/pr/) in Amazon S3 and share us a link.
@@ -65,13 +72,22 @@ Basic data management concepts. Some programming language. Some AWS.
 
 4) Submit your analysis, your queries, and the outcome of the reports as a [.ipynb](https://fileinfo.com/extension/ipynb) file.
 
+#### Part 4: Infrastructure as Code & Data Pipeline with AWS CDK
+0) Using the [AWS CDK](https://aws.amazon.com/cdk/) create a data pipeline that will automate the steps above.
+1) The CDK application will create a Lambda function that executes
+   Part 1 and Part 2 (you can combine both in 1 lambda function). The lambda function will be scheduled to run daily.
+2) The CDK application will create an SQS queue that will be populated everytime the JSON file is written to S3. (Hint: [S3 - Notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html)) 
+3) For every message on the queue - execute a Lambda function that triggers a Lambda function that does Part 3 (just logging the results of the queries would be enough and no .ipynb is required).
+
+
 ### Q. Do I have to do all these?
 You can do as many as you like. We suspect though that once you start you won't be able to stop. It's addictive.
 
 ### Q. What do I have to submit?
-1) Link to data in S3 (if you complete Step 1)
-2) Source code (if you complete Step 2 or beyond)
-3) Source code in .ipynb file format and results (if you complete the Step 3)
+1) Link to data in S3 and source code (Step 1)
+2) Source code (Step 2)
+2) Source code in .ipynb file format and results (Step 3)
+4) Source code of the CDK application (Step 4)
 
 ### Q. What if I successfully complete all the steps?
 We have many more for you to solve as a member of the Rearc team!
