@@ -36,11 +36,11 @@ This quest consists of 4 different parts. Putting all 4 parts together we will h
 
 1) Using the dataframe from the population data API (Part 2),
    generate a report/table that will give the Mean and the Standard Distribution of the US population from the years [2013, 2018] inclusive.
-   
+
 2) Using the dataframe from the time-series (Part 1),
    generate a report that will give for every series_id the year which contains the max/largest sum of the values on all quarters.
    For example if the table had the following values:
-   
+
     | series_id   | year | period | value |
     |-------------|------|--------|-------|
     | PRS30006011 | 1995 | Q01    | 1     |
@@ -61,22 +61,22 @@ This quest consists of 4 different parts. Putting all 4 parts together we will h
 
 3) Using both dataframes from Part 1 and Part 2, generate a report that will provide the `value`
    for `series_id = PRS30006032` and `period = Q01` and the `population` for that given year (if available in the population dataset)
-   
+
     | series_id   | year | period | value | Population |
     |-------------|------|--------|-------|------------|
     | PRS30006032 | 2018 | Q01    | 1.9   | 327167439  |
 
     **Hints:** when working with public datasets you sometimes might have to perform some data cleaning first.
    For example, you might find it useful to perform [trimming](https://stackoverflow.com/questions/35540974/remove-blank-space-from-data-frame-column-values-in-spark) of whitespaces before doing any filtering or joins
-   
+
 
 4) Submit your analysis, your queries, and the outcome of the reports as a [.ipynb](https://fileinfo.com/extension/ipynb) file.
 
 #### Part 4: Infrastructure as Code & Data Pipeline with AWS CDK
-0) Using the [AWS CDK](https://aws.amazon.com/cdk/) create a data pipeline that will automate the steps above.
-1) The CDK application will create a Lambda function that executes
+0) Using [AWS CloudFormation](https://aws.amazon.com/cloudformation/), [AWS CDK](https://aws.amazon.com/cdk/) or [Terraform](https://www.terraform.io/) create a data pipeline that will automate the steps above.
+1) The deployment will create a Lambda function that executes
    Part 1 and Part 2 (you can combine both in 1 lambda function). The lambda function will be scheduled to run daily.
-2) The CDK application will create an SQS queue that will be populated everytime the JSON file is written to S3. (Hint: [S3 - Notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html)) 
+2) The deployment will create an SQS queue that will be populated everytime the JSON file is written to S3. (Hint: [S3 - Notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html))
 3) For every message on the queue - execute a Lambda function that triggers a Lambda function that does Part 3 (just logging the results of the queries would be enough and no .ipynb is required).
 
 
@@ -87,7 +87,7 @@ You can do as many as you like. We suspect though that once you start you won't 
 1) Link to data in S3 and source code (Step 1)
 2) Source code (Step 2)
 2) Source code in .ipynb file format and results (Step 3)
-4) Source code of the CDK application (Step 4)
+4) Source code of the data pipeline infrastructure (Step 4)
 
 ### Q. What if I successfully complete all the steps?
 We have many more for you to solve as a member of the Rearc team!
