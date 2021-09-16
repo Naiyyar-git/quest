@@ -39,8 +39,8 @@ This quest consists of 4 different parts. Putting all 4 parts together we will h
    generate the mean and the standard deviation of the US population across the years [2013, 2018] inclusive.
 
 2) Using the dataframe from the time-series (Part 1),
-   generate a report that will give for every series_id the year which contains the max/largest sum of "value" for all quarters in that year, along with the summed value for that year.
-   For example if the table had the following values:
+   For every series_id, find the "best year" the year with the max/largest sum of "value" for all quarters in that year. Generate a report with each series id, the best year for that series, and the summed value for that year.
+   For example, if the table had the following values:
 
     | series_id   | year | period | value |
     |-------------|------|--------|-------|
