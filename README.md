@@ -18,7 +18,7 @@ This quest consists of 4 different parts. Putting all 4 parts together we will h
 
 #### Part 1: AWS S3 & Sourcing Datasets
 1) Republish [this open dataset](https://download.bls.gov/pub/time.series/pr/) in Amazon S3 and share with us a link.
-2) Script this process so the files in the S3 bucket are kept in sync with the source when data is updated, added, or deleted.
+2) Script this process so the files in the S3 bucket are kept in sync with the source when data on the website is updated, added, or deleted.
 3) Don't rely on hard coded names - the script should be able to handle added or removed files.
 4) Ensure the script doesn't upload the same file more than once.
 
