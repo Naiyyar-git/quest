@@ -35,7 +35,7 @@ This quest consists of 4 different parts. Putting all 4 parts together we will h
                   etc).
 
 1) Using the dataframe from the population data API (Part 2),
-   generate a report/table that will give the Mean and the Standard Distribution of the US population from the years [2013, 2018] inclusive.
+   generate a report/table that will give the Mean and the Standard Deviation of the US population from the years [2013, 2018] inclusive.
 
 2) Using the dataframe from the time-series (Part 1),
    generate a report that will give for every series_id the year which contains the max/largest sum of the values on all quarters.
