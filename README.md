@@ -4,9 +4,10 @@
 It is a fun way to assess your data skills. It is also a good representative sample of the work we do at Rearc.
 
 ### Q. So what skills should I have?
-* data management / data engineering concepts.
-* programming language (python, java, scala, etc).
-* AWS
+* Data management / data engineering concepts.
+* Programming language (python, java, scala, etc).
+* AWS knowledge (Lambda, SQS, CloudWatch logs).
+* Infrastructure-as-code (Terraform, CloudFormation, etc)
 
 ### Q. What do I have to do?
 This quest consists of 4 different parts. Putting all 4 parts together we will have a Data Pipeline architecture.
@@ -16,9 +17,9 @@ This quest consists of 4 different parts. Putting all 4 parts together we will h
 - Lastly, Part 4 will put all the pieces together. The goal here is to showcase your experience with automation and AWS services.
 
 #### Part 1: AWS S3 & Sourcing Datasets
-1) Republish [this open dataset](https://download.bls.gov/pub/time.series/pr/) in Amazon S3 and share us a link.
-2) Script this process so the data can be kept in sync with the source when it updates and send us the script.
-3) Don't rely on hard coded names, the script should be able to handle added or removed files.
+1) Republish [this open dataset](https://download.bls.gov/pub/time.series/pr/) in Amazon S3 and share with us a link.
+2) Script this process so the files in the S3 bucket are kept in sync with the source when data on the website is updated, added, or deleted.
+3) Don't rely on hard coded names - the script should be able to handle added or removed files.
 4) Ensure the script doesn't upload the same file more than once.
 
 #### Part 2: APIs
@@ -35,11 +36,11 @@ This quest consists of 4 different parts. Putting all 4 parts together we will h
                   etc).
 
 1) Using the dataframe from the population data API (Part 2),
-   generate a report/table that will give the Mean and the Standard Deviation of the US population from the years [2013, 2018] inclusive.
+   generate the mean and the standard deviation of the US population across the years [2013, 2018] inclusive.
 
 2) Using the dataframe from the time-series (Part 1),
-   generate a report that will give for every series_id the year which contains the max/largest sum of the values on all quarters.
-   For example if the table had the following values:
+   For every series_id, find the *best year*: the year with the max/largest sum of "value" for all quarters in that year. Generate a report with each series id, the best year for that series, and the summed value for that year.
+   For example, if the table had the following values:
 
     | series_id   | year | period | value |
     |-------------|------|--------|-------|
@@ -73,11 +74,11 @@ This quest consists of 4 different parts. Putting all 4 parts together we will h
 4) Submit your analysis, your queries, and the outcome of the reports as a [.ipynb](https://fileinfo.com/extension/ipynb) file.
 
 #### Part 4: Infrastructure as Code & Data Pipeline with AWS CDK
-0) Using [AWS CloudFormation](https://aws.amazon.com/cloudformation/), [AWS CDK](https://aws.amazon.com/cdk/) or [Terraform](https://www.terraform.io/) create a data pipeline that will automate the steps above.
-1) The deployment will create a Lambda function that executes
+0) Using [AWS CloudFormation](https://aws.amazon.com/cloudformation/), [AWS CDK](https://aws.amazon.com/cdk/) or [Terraform](https://www.terraform.io/), create a data pipeline that will automate the steps above.
+1) The deployment should include a Lambda function that executes
    Part 1 and Part 2 (you can combine both in 1 lambda function). The lambda function will be scheduled to run daily.
-2) The deployment will create an SQS queue that will be populated everytime the JSON file is written to S3. (Hint: [S3 - Notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html))
-3) For every message on the queue - execute a Lambda function that triggers a Lambda function that does Part 3 (just logging the results of the queries would be enough and no .ipynb is required).
+2) The deployment should include an SQS queue that will be populated every time the JSON file is written to S3. (Hint: [S3 - Notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html))
+3) For every message on the queue - execute a Lambda function that outputs the reports from Part 3 (just logging the results of the queries would be enough. No .ipynb is required).
 
 
 ### Q. Do I have to do all these?
