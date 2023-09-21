@@ -115,5 +115,5 @@ How could you add information to your programmatic access requests to let BLS co
 </details>
 <details>
 <summary>Hint 3</summary>
-  Adding a ```User-Agent``` header to your request with contact information will comply with the BLS data policies and allow you to keep accessing their data programmatically.
+  Adding a <code>User-Agent</code> header to your request with contact information will comply with the BLS data policies and allow you to keep accessing their data programmatically.
 </details>
