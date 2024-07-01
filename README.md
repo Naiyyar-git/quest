@@ -62,7 +62,8 @@ This quest consists of 4 different parts. Putting all 4 parts together we will h
     | PRS30006012 | 2000 | 8     |
 
 3. Using both dataframes from Part 1 and Part 2, generate a report that will provide the `value`
-   for `series_id = PRS30006032` and `period = Q01` and the `population` for that given year (if available in the population dataset)
+   for `series_id = PRS30006032` and `period = Q01` and the `population` for that given year (if available in the population dataset).
+   The below table shows an example of one row that might appear in the resulting table:
 
     | series_id   | year | period | value | Population |
     |-------------|------|--------|-------|------------|
