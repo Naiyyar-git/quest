@@ -91,6 +91,7 @@ You can do as many as you like. We suspect though that once you start you won't 
 2. Source code (Step 2)
 3. Source code in .ipynb file format and results (Step 3)
 4. Source code of the data pipeline infrastructure (Step 4)
+5. Any README or documentation you feel would help us navigate your quest.
 
 ### Q. What if I successfully complete all the steps?
 We have many more for you to solve as a member of the Rearc team!
