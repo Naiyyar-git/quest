@@ -1,0 +1,9 @@
+# terraform provider binaries — too large for GitHub
+.terraform/
+
+# terraform state files — contain sensitive data
+terraform.tfstate
+terraform.tfstate.backup
+
+# zip files — rebuilt during deployment
+*.zip
