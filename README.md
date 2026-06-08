@@ -28,6 +28,8 @@ EventBridge daily schedule triggers Step Functions state machine
 which orchestrates 4 ingest Lambdas in sequencepulation JSON
 landing in S3 triggers SQS which triggers the analytics Lambda.
 
+<img width="1110" height="953" alt="image" src="https://github.com/user-attachments/assets/89fe7f9e-358d-402a-8e0e-3b79967de997" />
+
 Key decisions:
 - Step Functions for orchestration with per-state retry logic
 - ETag comparison in DynamoDB prevents re-uploading unchanged files
