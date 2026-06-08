@@ -61,6 +61,15 @@ Report 1 — mean population 2013-2018: 322,069,808  std: 4,158,441
 Report 2t year per series across 282 series IDs
 Report 3 — PRS30006032 Q01 joined with population by year — 32 rows
 
+## Public S3 Links
+
+BLS data:
+https://rearc-quest-naiyyar.s3.us-west-2.amazonaws.com/bronze/bls/pr.data.0.Current
+
+Population data:
+https://rearc-quest-naiyyar.s3.us-west-2.amazonaws.com/bronze/api/population.json
+ENDOFFILE
+
 ## AI usage
 
 Used Claude as a reference tool for architecture decisions, AWS service
